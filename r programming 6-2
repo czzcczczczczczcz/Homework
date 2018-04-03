@@ -1,0 +1,8 @@
+idist<-matrix(,1000,10)
+for(j in 1:10)
+{for (i in 1:1000)
+{for (k in 1:5)
+  {idist[i,j]=x[i,k]*m.mat[j,k]/(sqrt(x[i,k]^2)*sqrt(m.mat[j,k]^2))
+  }
+}
+}
