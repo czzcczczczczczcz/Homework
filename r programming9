@@ -43,17 +43,32 @@ a=191
 let y) 
 
 (3)
-Awin=0
-  for(k in 1:200) {
-    set.seed(k)
-    m1 <- 10
-    m2 <- 5
-    num <- 0
-    a<-rbinom(1,1,1/2)
-    if(a==0)
-    {
-      Awin=Awin+1
+Avictory <- 0
+Bvictory <- 0
+
+for(k in 1:200) {
+  set.seed(k)
+  m1 <- 10
+  m2 <- 5
+  num <- 0
+  
+  while(TRUE) {
+    x <- rbinom(1, 1, 1/2) 
+    if(x == 0) {
+      m1 <- m1 - 1
+      m2 <- m2 + 1
+    } else {
+      m1 <- m1 + 1
+      m2 <- m2 - 1
+    } 
+    
+    if(m2 == 0) {
+      Avictory <- Avictory + 1
+      break;
+    } else if(m1 == 0) {
+      Bvictory <- Bvictory + 1
+      break;
     }
   }
-  print(Awin)=101
-  A wins 101 matchs
+}
+print(Avictory)=129
