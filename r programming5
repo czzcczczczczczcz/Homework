@@ -1,1 +1,5 @@
-
+x <- matrix(nrow = 1000, ncol = 5)
+for(i in 1:1000) {
+  sid <- sample(1:10, 5)
+  x[i,] <- sid
+}
