@@ -1,1 +1,4 @@
-
+(1)
+rdata = read.table("temp/rowdata.txt", header = TRUE,
+               stringsAsFactors= FALSE)
+(2)
