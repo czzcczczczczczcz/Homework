@@ -1,1 +1,42 @@
+(1)
+set.seed(1)
+m1 = 10
+m2 = 5
+num = 0
+for(i in 1:4)
+{
+  x<-rbinom(1,1,1/2)
+  if(x==0)
+  {
+    m1=m1-1
+    m2=m2-1
+  }
+  else
+  {
+    m1=m1+1
+    m2=m2-1
+  }
+}
+after 4 experiments
+m1=10, m2=5
+(2)
+set.seed(1)
+m1 = 10
+m2 = 5
+num = 0
+a=0
 
+  while(!((m1 == 0) || (m2 == 0))) {
+    x <- rbinom(1, 1, 1/2) 
+    if(x == 0) {
+      m1 <- m1 - 1
+      m2 <- m2 + 1
+    } else {
+      m1 <- m1 + 1
+      m2 <- m2 - 1
+    } # after 4 experiments, m1 == 10, m2 == 5
+    
+    a <- a + 1
+  }
+a=191
+191
