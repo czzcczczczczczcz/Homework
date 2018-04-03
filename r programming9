@@ -40,3 +40,20 @@ a=0
   }
 a=191
 191
+let y) 
+
+(3)
+Awin=0
+  for(k in 1:200) {
+    set.seed(k)
+    m1 <- 10
+    m2 <- 5
+    num <- 0
+    a<-rbinom(1,1,1/2)
+    if(a==0)
+    {
+      Awin=Awin+1
+    }
+  }
+  print(Awin)=101
+  A wins 101 matchs
