@@ -1,0 +1,29 @@
+set.seed(1)
+x <- sort(rnorm(100))
+y<- 3+x^2 + rnorm(100)
+set.seed(17)
+x.tr <- sort(rnorm(eval.n))
+y.tr <- 3 + x.tr ^ 2 + rnorm(eval.n)
+library(FNN)
+sig<-rep(0,30)
+for(k in 1:30){
+knnx.index(x.tr, 0, k )
+idx <- c(knnx.index(x.tr, 0, k))
+yhat <- mean( y.tr[idx] ) 
+eval.point = 0
+idx<- c( knnx.index(x.tr, eval.point, k) )
+
+mean(y[idx])
+eval.n = 100
+eval.point = seq(-3,3, length= eval.n)
+
+idx.mat<- knnx.index(x.tr, eval.point , k)
+yhat = rep(0,eval.n)
+for (i in 1:eval.n)  { yhat[i]<-mean(y[idx.mat[i,]]) }
+sig[k]=sum((yhat[k]-y.tr[k])^2)
+}
+sig
+plot(1:30,sig,type='l')
+min(sig)
+which.min(sig)
+#13
